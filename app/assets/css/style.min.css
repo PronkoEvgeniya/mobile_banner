@@ -1,6 +1,12 @@
+@font-face {
+    font-family: SFPRODISPLAYBLACKITALIC;
+    src: url(../fonts/SFPRODISPLAYBLACKITALIC.OTF);
+}
+
 body {
-    color: #fff;
+    color: rgb(148, 15, 15);
     background: url(../img/imgmin/4.png);
+    font-family: SFPRODISPLAYBLACKITALIC;
     width: 100px;
     height: 200px;
 }

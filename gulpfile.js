@@ -25,6 +25,10 @@ function scripts() {
     .pipe(browserSync.stream());
 }
 
+// function fonts() {
+//   return src('app/assets/fonts/*').pipe(dest('dist/assets/fonts'));
+// }
+
 function watching() {
   watch(['app/assets/style/style.scss'], styles);
   watch(['app/js/main.js'], scripts);
@@ -50,6 +54,9 @@ function building() {
       'app/js/main.min.js',
       'app/**/*.html',
       'app/assets/img/imgmin/*',
+      'app/assets/fonts/*',
+      'app/assets/icons/*',
+      'app/assets/localizations/*',
     ],
     {
       base: 'app',
