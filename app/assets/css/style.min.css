@@ -1,4 +1,6 @@
-* {
+body {
     color: #fff;
-    background-color: aqua;
+    background: url(../img/imgmin/4.png);
+    width: 100px;
+    height: 200px;
 }
