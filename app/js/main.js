@@ -13,6 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
   } else if (langs.includes(userLang)) {
     selectLang = userLang;
   }
+  if (selectLang === 'ru' || selectLang === 'es' || selectLang === 'fr' || selectLang === 'nl') {
+    document.querySelector('.title').style.padding = '100px 40px 0';
+    document.querySelector('.title').style.fontSize = '25px';
+  } else if (selectLang === 'ja') {
+    document.querySelector('.links').style.fontSize = '8px';
+    document.querySelector('.title').style.fontSize = '25px';
+  }
   fetch(`../assets/localizations/${selectLang}.json`)
     .then((response) => response.json())
     .then((data) => {

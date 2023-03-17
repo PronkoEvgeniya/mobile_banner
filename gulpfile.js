@@ -4,16 +4,15 @@ const scss = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify-es').default;
 const browserSync = require('browser-sync').create();
-const autoPrefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const clean = require('gulp-clean');
 
 function styles() {
   return src('app/assets/style/style.scss')
-    .pipe(autoPrefixer({ overrideBrowsersList: ['last 10 version'] }))
+    .pipe(scss({ outputStyle: 'compressed' }))
     .pipe(concat('style.min.css'))
     .pipe(dest('app/assets/css'))
-    .pipe(scss({ outputStyle: 'compressed' }))
+
     .pipe(browserSync.stream());
 }
 
@@ -24,10 +23,6 @@ function scripts() {
     .pipe(dest('app/js'))
     .pipe(browserSync.stream());
 }
-
-// function fonts() {
-//   return src('app/assets/fonts/*').pipe(dest('dist/assets/fonts'));
-// }
 
 function watching() {
   watch(['app/assets/style/style.scss'], styles);
